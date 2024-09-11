@@ -26,5 +26,10 @@ img {
 
 .center {
     margin: auto;
-    width: 50%;
+    max-width: 50%;
+    width: auto;
 }
+
+@media (max-width: 640px) {
+    .center {max-width: 75%}
+  }
