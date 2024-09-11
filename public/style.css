@@ -38,6 +38,12 @@ table {
     border: #fff 2px solid;
     padding: 8px;
 }
+@media (prefers-color-scheme: light) {
+    table {
+        border: black 2px solid;
+        padding: 8px;
+    }
+}
 
 th {
     padding-right: 24px;
