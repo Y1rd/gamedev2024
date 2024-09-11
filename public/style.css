@@ -32,4 +32,13 @@ img {
 
 @media (max-width: 640px) {
     .center {max-width: 75%}
-  }
+}
+
+table {
+    border: #fff 2px solid;
+    padding: 8px;
+}
+
+th {
+    padding-right: 24px;
+}
