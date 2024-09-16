@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>In and Out</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>t1ao6-in-and-out by Yird.</h1>
+    <p id="calctext">It's a calculator, try it out. Also because I thought a simple name output was boring.</p>
+    <p>P.S. Only basic operations supported (add/sub/divide/multi). Also error checking.</p>
+    <input id="calcinput" type="text">
+    <button id="calcbutton" onclick="calculateInput()">Calculate</button>
+    <script>
+        function calculateInput() {
+            // Variables
+            const input = document.getElementById("calcinput").value;
+            const output = document.getElementById("calctext");
+
+            try {
+                const result = eval(input);
+                if (isNaN(result) ||!isFinite(result)) {
+                    output.innerText = "Are you trying to divide by 0? You can't!";
+                } else {
+                    output.innerText = `Result: ${result}`;
+                }
+            } catch (error) {
+                output.innerText = "That is not a valid input...";
+            }
+        }
+    </script>
+</body>
+</html>
