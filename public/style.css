@@ -6,6 +6,12 @@
         --text: #fff;
         --bg: #1f1f1f;
     }
+    a {
+        color: #bbb;
+    }
+    a:hover {
+        color: #bcccff
+    }
 }
 
 body {
@@ -42,6 +48,12 @@ table {
     table {
         border: black 2px solid;
         padding: 8px;
+    }
+    a {
+        color: #383838;
+    }
+    a:hover {
+        color: #bcccff
     }
 }
 
