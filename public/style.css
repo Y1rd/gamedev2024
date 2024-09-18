@@ -1,6 +1,7 @@
-/* Auto Dark Mode pretty much. */
+/* Favorite Font. */
 @import url('https://fonts.googleapis.com/css2?family=Handjet:wght@100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
+/* Auto Dark Mode pretty much. */
 @media (prefers-color-scheme: dark) {
     :root {
         --text: #fff;
@@ -12,6 +13,51 @@
     }
     a:hover {
         color: #bcccff
+    }
+    button, input[type=button], input[type=reset], input[type=submit] {
+        background-color: white;
+    }
+    button:hover, input[type=button]:hover, input[type=reset]:hover, input[type=submit]:hover {
+        background-color: #383838;
+        color: white;
+    }
+    input[type=text] {
+        border: none;
+        border-bottom: 2px solid white;
+        color: white;
+    }
+    input[type=text]:focus {
+        background-color: #181818;
+    }
+}
+@media (prefers-color-scheme: light) {
+    :root {
+        --hrcolor: black;
+    }
+    table {
+        border: black 2px solid;
+        padding: 8px;
+    }
+    a {
+        color: #383838;
+    }
+    a:hover {
+        color: #bcccff
+    }
+    button {
+        background-color: #383838;
+        color: white;
+    }
+    button:hover {
+        background-color: #bbb;
+    }
+    input[type=text] {
+        border: none;
+        border-bottom: 2px solid black;
+        color: black;
+    }
+    input[type=text]:focus {
+        background-color: #e2e2e2;
     }
 }
 
@@ -41,25 +87,13 @@ img {
 @media (max-width: 640px) {
     .center {max-width: 75%}
 }
+@media (max-width: 420px) {
+    .center {max-width: 85%}
+}
 
 table {
     border: #fff 2px solid;
     padding: 8px;
-}
-@media (prefers-color-scheme: light) {
-    :root {
-        --hrcolor: black;
-    }
-    table {
-        border: black 2px solid;
-        padding: 8px;
-    }
-    a {
-        color: #383838;
-    }
-    a:hover {
-        color: #bcccff
-    }
 }
 
 th {
@@ -76,4 +110,38 @@ label, input {
     border: none;
     border-top: 3px solid var(--hrcolor);
     margin-top: 20px;
+}
+
+button, input[type=button], input[type=reset], input[type=submit] {
+    border: none;
+    font-family: "Inter", sans-serif;
+    cursor: pointer;
+    padding: 4px 6px;
+    margin-top: 8px;
+    font-size: 16px;
+    border-radius: 4px;
+    transition: .2s ease;
+}
+button:hover, input[type=button]:hover, input[type=reset]:hover, input[type=submit]:hover {
+    transition: .2s ease;
+}
+
+input[type=text] {
+    padding: 4px 6px;
+    background-color: transparent;
+    transition: .2s ease;
+}
+input[type=text]:focus {
+    outline: none;
+    transition: .2s ease;
+}
+
+textarea {
+    border: none;
+    background-color: #181818;
+    color: white;
+    border-bottom: 2px solid white;
+}
+textarea:focus {
+    outline: none;
 }
