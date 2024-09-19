@@ -29,6 +29,16 @@
     input[type=text]:focus {
         background-color: #181818;
     }
+    select {
+        background-color: #fff;
+        color: black;
+    }
+    textarea {
+        border: none;
+        background-color: #181818;
+        color: white;
+        border-bottom: 2px solid white;
+    }
 }
 @media (prefers-color-scheme: light) {
     :root {
@@ -44,11 +54,11 @@
     a:hover {
         color: #bcccff
     }
-    button {
+    button, input[type=button], input[type=reset], input[type=submit] {
         background-color: #383838;
         color: white;
     }
-    button:hover {
+    button:hover, input[type=button]:hover, input[type=reset]:hover, input[type=submit]:hover {
         background-color: #bbb;
     }
     input[type=text] {
@@ -58,6 +68,16 @@
     }
     input[type=text]:focus {
         background-color: #e2e2e2;
+    }
+    select {
+        background-color: #383838;
+        color: white;
+    }
+    textarea {
+        border: none;
+        background-color: #bbb;
+        color: black;
+        border-bottom: 2px solid black;
     }
 }
 
@@ -137,11 +157,19 @@ input[type=text]:focus {
 }
 
 textarea {
-    border: none;
-    background-color: #181818;
-    color: white;
-    border-bottom: 2px solid white;
+    resize: none;
+    font-family: "Inter", sans-serif;
 }
 textarea:focus {
+    outline: none;
+}
+
+select {
+    font-family: "Inter", sans-serif;
+    border: none;
+    padding: 4px 6px;
+    border-radius: 4px;
+}
+select:focus {
     outline: none;
 }
