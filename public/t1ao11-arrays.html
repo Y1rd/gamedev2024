@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="center">
+        <h1>Arrays</h1>
+        <p id="arraytext">Some text.</p>
+        <label>Name:</label><input type="text" id="myFirstName" placeholder="Fred">
+        <button onclick="setArray()">Set Test Array</button>
+        <button onclick="showArray()">Show Array</button>
+    </div>
+    <script>
+        let myMax = 6
+        let myArray = new Array(myMax)
+
+        function setArray() {
+            myArray[0] = 'Fred'
+            myArray[1] = 'Mary'
+            myArray[2] = 'Peter'
+            myArray[3] = document.getElementById('myFirstName').value
+            document.getElementById('arraytext').innerHTML = "Array Set."
+        }
+        function showArray() {
+            // For 4 times, print the various arrays.
+            document.getElementById('arraytext').innerHTML = ""
+            for (loop=0; loop < 4; loop++) {
+                document.getElementById('arraytext').innerHTML += 'myArray[' + loop + '] = ' + myArray[loop] + '<br>'
+            }
+        }
+    </script>
+</body>
+</html>
