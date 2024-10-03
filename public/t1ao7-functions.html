@@ -4,10 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="center">
-        <h1>Unfinished</h1>s
+        <h1>Simple Json Prase</h1>
+        <p>Look see, it's cool!</p>
+        <button onclick="fetchJSONData('example.json')">Click me.</button>
+        <p id="jsonoutput">Information should go here.</p>
     </div>
+    <script>
+        // Fetches json from a local file, requires a web server to be running to actually work.
+        function fetchJSONData(file) {
+            fetch(file)
+                .then((res) => {
+                    // Catch error (I wonder why...)
+                    if (!res.ok) {
+                        throw new Error
+                            (`HTTP error! Status: ${res.status}`);
+                    }
+                    return res.json();
+                })
+                .then((data) => {
+                    console.log(data);
+                    const outputElement = document.getElementById('jsonoutput');
+                    // Takes the json file and it's entries, mapping keys to text.
+                    // I still don't quite understand it.
+                    const jsonData = Object.keys(data).map(key => `${key}: ${data[key]}`).join('<br>');
+                    outputElement.innerHTML = jsonData;
+                })
+                .catch((error) =>
+                    console.error("Unable to fetch data:", error));
+        }
+    </script>
 </body>
 </html>
