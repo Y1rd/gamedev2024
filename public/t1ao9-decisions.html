@@ -3,11 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Decisions</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="center">
-        <h1>Unfinished</h1>
+        <h1>Decisions</h1>
+        <p>Yes I'm rushing these.</p>
+        <p>Here, try typing a number here. Something will happen if it's a low/high number. Or maybe a letter?</p>
+        <input type="text" id="decision"><input type="button" onclick="decisionFunc()" value="Click">
+        <p id="output">...</p>
     </div>
+    <script>
+        function decisionFunc() {
+            text = document.getElementById('decision').value
+            output = document.getElementById('output')
+            Number(text)
+            if (isNaN(text)) {
+                output.innerHTML = "That's a letter, silly."
+            } else {
+                output.innerHTML = "A valid number!"
+            }
+        }
+    </script>
 </body>
 </html>
