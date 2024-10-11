@@ -3,19 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Objects</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="center">
-        <h1>Unfinished</h1>
+        <h1>Objects</h1>
+        <p>They can have information in them, you know. Lots of it.</p>
+        <button onclick="printDummy()">Behold!</button>
+        <p id="outputtext">...</p>
     </div>
     <script>
-        let dummyVariable = {
+        const dummyVariable = {
             "firstName":    "John",
             "lastName":     "Doe",
             "age":          "25",
             "eyeColor":     "Blue"
+        }
+
+        function printDummy() {
+            let output = document.getElementById('outputtext')
+            output.innerHTML = ""
+            // Simple loop to print everything on the page
+            for (const property in dummyVariable) {
+                output.innerHTML += property + ": " + dummyVariable[property] + "<br>"
+            }
         }
     </script>
 </body>

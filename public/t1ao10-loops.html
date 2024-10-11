@@ -3,11 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Loops</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="center">
-        <h1>Unfinished</h1>
+        <h1>Loops</h1>
+        <p>Maybe maybe maybe.</p>
+        <button onclick="loopFunction()">Loop behold!</button>
+        <p id="outputtext">...</p>
     </div>
+    <script>
+        function loopFunction() {
+            let outputtext = document.getElementById('outputtext')
+
+            // Write text on the page 4 times
+            outputtext.innerHTML = ""
+            for (let x = 0; x < 4; x++) {
+                outputtext.innerHTML += "Test output " + x + "<br>"
+            }
+        }
+    </script>
 </body>
 </html>
