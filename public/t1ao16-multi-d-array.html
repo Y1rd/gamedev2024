@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi Array</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="center">
+        <h1>Arrays but a lot of them.</h1>
+        <p>I'm getting lazy... and tired.</p>
+        <input type="text" id="coolinput" placeholder="Type something here...">
+        <button onclick="manualArraySet()">Set Manual Array</button>
+        <button onclick="manualArrayShow()">Show Manual Array</button>
+        <button onclick="autoArraySet()">Set Auto Array</button>
+        <button onclick="autoArrayShow()">Show Auto Array</button>
+        <p id="outputtext">...</p>
+    </div>
+    <script>
+        // Variables
+        let max = 3
+        let arraymanual = new Array(max)
+        let arrayauto = new Array(max)
+        let coolinput = document.getElementById('coolinput')
+        let outputtext = document.getElementById('outputtext')
+
+        function manualArraySet() {
+            arraymanual = [ [3,4,2], [1,2,3], [5,6,7]]
+            outputtext.innerHTML = "Manual array set!"
+        }
+        function manualArrayShow() {
+            outputtext.innerHTML = ""
+            for (loop = 0; loop < max; loop++) {
+                for (loop1 = 0; loop1 < max; loop1++) {
+                    // Note to self: Understand this.
+                    outputtext.innerHTML += `arraymanual[${loop},${loop1}] = ${arraymanual[loop][loop1]}<br>`
+                }
+            }
+        }
+        function autoArraySet() {
+            arrayauto[0,0] = Math.floor(Math.random() * 100)
+            outputtext.innerHTML = arrayauto[0,0]
+        }
+        function autoArrayShow() {
+            // Later...
+        }
+    </script>
+</body>
+</html>
