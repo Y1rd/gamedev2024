@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game</title>
+</head>
+<body>
+    <button onclick="moveRight()">Move Right</button><br>
+    <img id="playerbox" src="water.jpg" height="300" width="300">
+    <script>
+        // Variables
+        let timer = 30
+        let player = document.getElementById('playerbox')
+
+        // Won't move otherwise
+        player.style.position = 'absolute';
+        player.style.left = '0px';
+
+        function moveRight() {
+            player.style.left = parseInt(player.style.left) + 10 + 'px'
+        }
+    </script>
+</body>
+</html>
