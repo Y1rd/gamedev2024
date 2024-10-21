@@ -8,7 +8,15 @@
 </head>
 <body>
     <div class="center">
-        
+        <h1>Events and what not</h1>
+        <p oncopy="output.innerHTML = 'I see you like the text.'" onpaste="output.innerHTML = 'There is not anywhere to paste here...'">Small demo. Also try copying (and pasting) the text right here on the page.</p>
+        <input oncopy="output.innerHTML = 'I see you like the text.'" onpaste="output.innerHTML = 'Yeah, you can paste here.'" type="text">
+        <button onpaste="output.innerHTML = 'There is not anywhere to paste here...'" onclick="output.innerHTML = 'Boop!'">On Click</button>
+        <button onpaste="output.innerHTML = 'There is not anywhere to paste here...'" onmousemove="output.innerHTML = 'You moved over me!'">Hover over this!</button>
+        <p onpaste="output.innerHTML = 'There is not anywhere to paste here...'" id="output">...</p>
     </div>
+    <script>
+        let output = document.getElementById('output')
+    </script>
 </body>
 </html>
