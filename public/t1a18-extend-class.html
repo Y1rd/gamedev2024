@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Extending Classes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="center">
+        <h1>Extending Classes</h1>
+        <input type="button" value="Example Class Set and Show Class Animal" onclick="dogsCool()">
+        <input type="button" value="Example Class Set as Cat" onclick="catsCool()">
+        <p id="classoutput">...</p>
+    </div>
+    <script>
+        // Variables
+        let output = document.getElementById("classoutput")
+
+        // Animal Class
+        class myAnimal {
+            constructor(passName, passAge) {
+                this.myName = passName;
+                this.myAge = passAge;
+            }
+            myShow(){
+                output.innerHTML = "Hello " + this.myName + "! You are a cool dog. Your age is " + this.myAge + "!";
+            }
+        }
+        class myCat extends myAnimal {
+            myShow(){
+                output.innerHTML = "Hello " + this.myName + "! You are a cool cat.";
+            }
+        }
+
+        // Actual Functions
+        function dogsCool() {
+            let myDog = new myAnimal('Snickers', 5)
+            myDog.myShow()
+        }
+        function catsCool() {
+            let myKitty = new myCat('Fluffy', 14)
+            myKitty.myShow()
+        }
+    </script>
+</body>
+</html>
