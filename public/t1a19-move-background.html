@@ -6,9 +6,51 @@
     <title>Moving Background</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body id="body" style="background-image: url(water.jpg); background-repeat: repeat; background-size: 80%;">
     <div class="center">
-        <h1>Unfinished</h1>
+        <h1>Moving the Background</h1>
+        <button onclick="moveRight()">Move Right</button>
+        <button onclick="moveLeft()">Move Left</button>
+        <button onclick="autoMoveLeft()">Auto Move Left</button>
+        <button onclick="autoMoveRight()">Auto Move Right</button>
+        <button onclick="autoStop()">Stop</button>
     </div>
+    <script>
+        // Variables
+        let globalnum = 0
+        let background = document.getElementById("body")
+        let automovinginterval
+
+        // Simple Moving Backgrounds
+        function moveLeft() {
+            let tempnum = '100px 0px'
+            globalnum -= 5
+            tempnum = globalnum + 'px 0px'
+            background.style.backgroundPosition = tempnum
+        }
+        function moveRight() {
+            let tempnum = '100px 0px'
+            globalnum += 5
+            tempnum = globalnum + 'px 0px'
+            background.style.backgroundPosition = tempnum
+        }
+
+        // Just run the above functions, but on a timer.
+        function autoMoveLeft() {
+            clearInterval(automovinginterval)
+            automovinginterval = setInterval(() => {
+                moveLeft();
+            }, 50)
+        }
+        function autoMoveRight() {
+            clearInterval(automovinginterval)
+            automovinginterval = setInterval(() => {
+                moveRight()
+            }, 50)
+        }
+        function autoStop() {
+            clearInterval(automovinginterval);
+        }
+    </script>
 </body>
 </html>
