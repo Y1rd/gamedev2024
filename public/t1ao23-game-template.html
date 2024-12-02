@@ -4,14 +4,63 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Game Template</title>
+    <style>
+        body {
+            background-color: gray;
+            background-repeat: repeat;
+            background-size: 80%;
+        }
+        .bottommiddiv {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    </style>
 </head>
-<body id="myBody" style="background-repeat:repeat; background-size: 80%" background="water.jpg">
-    <h6>Version 0.0.1</h6>
-    <h1 align=center>t2a11 Game Template by Fred</h1>
-    <br><br><br><br>
-    <img id="myImg01" style="position:absolute; width:100px; height:80px; top:0px; left:50px; background-color: blue;" src="">
-    <img id="myImg02" style="position:absolute; width:100px; height:80px; top:0px; left:250px; background-color: red;" src="">
-    <input type=button value="Auto Background Left" onclick="{
+<body id="myBody">
+    <!--The default game template, but with much cleaner code.-->
+    <div id="myImg01" style="position:absolute;width:100px;height:80px;top:0px;left:50px;background-color:blue;"></div>
+    <div id="myImg02" style="position:absolute;width:100px;height:80px;top:0px;left:250px;background-color:red;"></div>
+    <!--User clickable buttons.-->
+    <div class="bottommiddiv">
+        <input type=button value="Auto Background Left" onclick="autoBackgroundLeft()">
+        <input type=button value="Image Right Fast Button" onTouchStart="preMoveDivRight()" onclick="moveDivRight()">
+    </div>
+    <script>
+    // Variables
+    let myGlobalX = 0
+    let myClock
+
+    // Legacy Function
+    // Defines collision between elements
+    function myHitOther(my1,my2){
+        left1   = parseInt(document.getElementById(my1).style.left)
+        right1  = left1 + parseInt(document.getElementById(my1).style.width)
+        top1    = parseInt(document.getElementById(my1).style.top)   
+        bottom1 = top1   + parseInt(document.getElementById(my1).style.height)
+        left2   = parseInt(document.getElementById(my2).style.left)
+        right2  = left2 + parseInt(document.getElementById(my2).style.width)
+        top2    = parseInt(document.getElementById(my2).style.top)   
+        bottom2 = top2   + parseInt(document.getElementById(my2).style.height)
+        if ((right1 >= left2) && (bottom1 >= top2) && (left1 <= right2) && (top1 <= bottom2) ) {
+            return true
+        }
+    }
+
+    // Legacy Function
+    // Checks collision between two html elements and runs an action depending on it
+    function myCheckHit(){
+        if ( myHitOther('myImg01','myImg02') ){
+            alert('you lose')  
+            document.getElementById('myImg01').style.left = '20px'
+            location = 't2a13-keydown.html'  // go to your next level
+        }
+    }
+
+    // Legacy Function
+    // Moves the background left automatically
+    function autoBackgroundLeft() {
         clearInterval(myClock)
         let myTemp = '100px 0px'
         myClock = setInterval(function(){
@@ -19,47 +68,16 @@
             myTemp =  myGlobalX + 'px 0px'
             document.getElementById('myBody').style.backgroundPosition = myTemp
         }, 100)
-          
-      }">
-      
-      
-      <input type=button value="Image Right Fast Button" onTouchStart="{this.click(); event.preventDefault();}" onclick="{
-        document.getElementById('myImg01').style.left = parseInt(document.getElementById('myImg01').style.left) + 10 + 'px'
-        myCheckHit()     // checks for all collisions
-      }"><br><br>
-    <script>
-    // global variables here
-    let myGlobalX = 0
-    let myClock
-
-    // global functions here
-    function myHitOther(my1,my2){
-    left1   = parseInt(document.getElementById(my1).style.left)
-    right1  = left1 + parseInt(document.getElementById(my1).style.width)
-    top1    = parseInt(document.getElementById(my1).style.top)   
-    bottom1 = top1   + parseInt(document.getElementById(my1).style.height)
-    left2   = parseInt(document.getElementById(my2).style.left)
-    right2  = left2 + parseInt(document.getElementById(my2).style.width)
-    top2    = parseInt(document.getElementById(my2).style.top)   
-    bottom2 = top2   + parseInt(document.getElementById(my2).style.height)
-    if ((right1  >=  left2  ) &&      	   
-        (bottom1 >=  top2   ) &&
-        (left1   <=  right2 ) &&
-        (top1    <=  bottom2) ) {
-            return true
-        }
     }
-
-    // Collision checking
-    function myCheckHit(){
-        if ( myHitOther('myImg01','myImg02') ){
-            alert('you lose')  
-            document.getElementById('myImg01').style.left = '20px'
-            location = 't2a13-keydown.html'  // go to your next level
-        }
-    // more if statements here like the above
-    // end of myCheckHit()
-    }  
+    // Legacy Function
+    // Moves the player to the right
+    function preMoveDivRight() {
+        event.preventDefault();
+    }
+    function moveDivRight() {
+        document.getElementById('myImg01').style.left = parseInt(document.getElementById('myImg01').style.left) + 10 + 'px';
+        myCheckHit()
+    }
     </script>
 </body>
 </html>
