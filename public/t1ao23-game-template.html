@@ -68,6 +68,17 @@
     // Variables
     let myGlobalX = 0
     let myClock
+    // This system allows for mulitple inputs at once
+    let movementKeyState = {
+        ArrowRight: false,
+        ArrowLeft: false,
+        ArrowDown: false,
+        ArrowUp: false,
+        d: false,
+        a: false,
+        s: false,
+        w: false
+    }
 
     // Legacy Function
     // Defines collision between elements
@@ -123,6 +134,37 @@
         document.getElementById('myImg01').style.top = parseInt(document.getElementById('myImg01').style.top) + -10 + 'px';
         myCheckHit()
     }
+
+    // Listen for keys being pressed
+    document.addEventListener('keydown', function(event) {
+        if (event.key in movementKeyState) {
+            movementKeyState[event.key] = true;
+        }
+        event.preventDefault(); 
+    });
+    document.addEventListener('keyup', function(event) {
+        if (event.key in movementKeyState) {
+            movementKeyState[event.key] = false;
+        }
+    });
+
+    // Actually move based on input
+    function updateMovement() {
+        if (movementKeyState.ArrowRight || movementKeyState.d) {
+            moveDivRight();
+        }
+        if (movementKeyState.ArrowLeft || movementKeyState.a) {
+            moveDivLeft();
+        }
+        if (movementKeyState.ArrowDown || movementKeyState.s) {
+            moveDivDown();
+        }
+        if (movementKeyState.ArrowUp || movementKeyState.w) {
+            moveDivUp();
+        }
+    }
+
+    setInterval(updateMovement, 16); // 60 fps (16ms)
     </script>
 </body>
 </html>
