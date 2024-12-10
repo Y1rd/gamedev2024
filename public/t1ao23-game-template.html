@@ -8,7 +8,6 @@
         @import url('https://fonts.googleapis.com/css2?family=Handjet:wght@100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
         body {
             background-color: gray;
-            background-image: url(water.jpg);
             background-repeat: repeat;
             background-size: 80%;
         }
@@ -52,17 +51,8 @@
     <!--The default game template, but with much cleaner code.-->
     <div id="myImg01" style="position:absolute;width:100px;height:80px;top:0px;left:50px;background-color:blue;"></div>
     <div id="myImg02" style="position:absolute;width:100px;height:80px;top:0px;left:250px;background-color:red;"></div>
-    <!--User clickable buttons.-->
-    <div class="bottommiddivcopyagain">
-        <input type=button value="Auto Background Left" onclick="autoBackgroundLeft()">
-    </div>
-    <div class="bottommiddivcopy">
-        <input type=button value="↑" onclick="moveDivUp()">
-    </div>
     <div class="bottommiddiv">
-        <input type=button value="<-" onclick="moveDivLeft()">
-        <input type=button value="↓" onclick="moveDivDown()">
-        <input type=button value="->" onclick="moveDivRight()">
+        <h1>Level 1: Run into the red square to win!!1!</h1>
     </div>
     <script>
     // Variables
@@ -102,7 +92,7 @@
         if ( myHitOther('myImg01','myImg02') ){
             alert('you lose')  
             document.getElementById('myImg01').style.left = '20px'
-            location = 't2a13-keydown.html'  // go to your next level
+            location = 'therealgame.html'  // go to your next level
         }
     }
 
