@@ -22,6 +22,7 @@
     // Level Constructor
     class Level {
       constructor(plan) {
+      // Trim will remove whitespace at the start and end of the variable
       let rows = plan.trim().split("\n").map(l => [...l]);
       this.height = rows.length;
       this.width = rows[0].length;
