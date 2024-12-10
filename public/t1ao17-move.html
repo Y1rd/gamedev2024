@@ -7,6 +7,9 @@
 </head>
 <body>
     <button onclick="moveRight()">Move Right</button><br>
+    <button onclick="moveLeft()">Move Left</button><br>
+    <button onclick="moveDown()">Move Down</button><br>
+    <button onclick="moveUp()">Move Up</button><br>
     <img id="playerbox" src="water.jpg" height="300" width="300">
     <script>
         // Variables
@@ -16,9 +19,19 @@
         // Won't move otherwise
         player.style.position = 'absolute';
         player.style.left = '0px';
+        player.style.top = '100px';
 
         function moveRight() {
             player.style.left = parseInt(player.style.left) + 10 + 'px'
+        }
+        function moveLeft() {
+            player.style.left = parseInt(player.style.left) - 10 + 'px'
+        }
+        function moveDown() {
+            player.style.top = parseInt(player.style.top) + 10 + 'px'
+        }
+        function moveUp() {
+            player.style.top = parseInt(player.style.top) - 10 + 'px'
         }
     </script>
 </body>

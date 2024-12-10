@@ -4,27 +4,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Objects and Arrays</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="center">
         <h1>Objects and Arrays</h1>
-        <p>Lazy rn... just look at the page code.</p>
+        <p>Click the button!</p>
+        <button onclick="printInformation()">Print Information</button>
     </div>
+    <br>
+    <div class="center" id="output"></div>
+
     <script>
         // Variables
-        let testArray = [5, 2, 8, 2, 1]
-        let testObject = {name: 'John', age: 30, profession: 'Developer'}
+        let testArray = [5, 2, 8, 2, 1];
+        let testObject = {name: 'John', age: 30, profession: 'Developer'};
 
-        // Array inside of a object.
+        // Array inside of an object
         let objectArray = {
             name: 'Alice',
             hobbies: ['Reading', 'Coding', 'Hiking']
-        }
-        // Object inside of an array.
+        };
+
+        // Object inside of an array
         let arrayObject = [
             {name: 'Bob', age: 32},
-            {name: 'Charile', age: 32}
-        ]
+            {name: 'Charlie', age: 32}
+        ];
+
+        // Function to format and print the information
+        function printInformation() {
+            const outputDiv = document.getElementById('output');
+            let output = '';
+
+            // Add the Test Array with line breaks for better formatting
+            output += '<strong>Test Array:</strong><br>' + JSON.stringify(testArray, null, 2).replace(/\n/g, '') + '<br><br>';
+
+            // Add the Test Object with line breaks for better formatting
+            output += '<strong>Test Object:</strong><br>' + JSON.stringify(testObject, null, 2).replace(/\n/g, '') + '<br><br>';
+
+            // Add the Object with Array
+            output += '<strong>Object with Array:</strong><br>' + 'Name: ' + objectArray.name + '<br>' + 'Hobbies: ' + objectArray.hobbies.join(', ') + '<br><br>';
+
+            // Add the Array of Objects with line breaks
+            output += '<strong>Array of Objects:</strong><br>';
+            arrayObject.forEach((person, index) => {
+                output += `Person ${index + 1}: Name: ${person.name}, Age: ${person.age}<br>`;
+            });
+
+            outputDiv.innerHTML = output;
+        }
     </script>
 </body>
 </html>
