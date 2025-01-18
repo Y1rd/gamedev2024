@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://c57phik34fuxg"]
+
+[ext_resource type="Script" path="res://moving_lava_vertical.gd" id="1_ibgpk"]
+[ext_resource type="Texture2D" uid="uid://cl5rq32qmkuxn" path="res://moving_lava.png" id="2_txh83"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tkw4a"]
+size = Vector2(24, 120)
+
+[node name="MovingPlatformVertical" type="Node2D" groups=["lava"]]
+script = ExtResource("1_ibgpk")
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D"]
+texture = ExtResource("2_txh83")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D"]
+shape = SubResource("RectangleShape2D_tkw4a")

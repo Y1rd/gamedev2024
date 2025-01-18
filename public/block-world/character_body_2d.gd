@@ -32,5 +32,4 @@ func _physics_process(delta: float) -> void:
 		if collision.get_collider().is_in_group("lava"):
 			if get_tree():
 				get_tree().reload_current_scene()
-		# These two are only for the level 1 tutorial
 		

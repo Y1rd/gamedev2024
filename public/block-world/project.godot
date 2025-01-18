@@ -15,10 +15,14 @@ run/main_scene="res://level.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Globalvariable="*res://globalvariable.gd"
+
 [global_group]
 
 lava="It like uh, kills you?"
-player="You know."
+coin="If scene is a coin."
 
 [input]
 

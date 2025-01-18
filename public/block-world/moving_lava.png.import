@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bnulca3dj6byt"
-path="res://.godot/imported/Block World.apple-touch-icon.png-07037496726bf3cabce78f6d2c3febda.ctex"
+uid="uid://cl5rq32qmkuxn"
+path="res://.godot/imported/moving_lava.png-b5480693459dc42d73abf4eb7f9be09d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Block World.apple-touch-icon.png"
-dest_files=["res://.godot/imported/Block World.apple-touch-icon.png-07037496726bf3cabce78f6d2c3febda.ctex"]
+source_file="res://moving_lava.png"
+dest_files=["res://.godot/imported/moving_lava.png-b5480693459dc42d73abf4eb7f9be09d.ctex"]
 
 [params]
 
